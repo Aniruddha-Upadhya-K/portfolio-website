@@ -1,0 +1,80 @@
+@import "tailwindcss";
+
+@theme inline {
+  --font-mono: var(--font-hack);
+  --font-sans: var(--font-overpass);
+}
+
+@theme {
+  /* primary */
+  --color-primary-50: oklch(0.94 0.027 28.95);
+  --color-primary-100: oklch(0.89 0.0538 31.01);
+  --color-primary-200: oklch(0.78 0.1139 31.74);
+  --color-primary-300: oklch(0.7 0.1755 33.14);
+  --color-primary-400: oklch(0.63 0.2254 32.34);
+  --color-primary-500: oklch(0.56 0.2041 32.34);
+  --color-primary-600: oklch(0.48 0.1734 32.53);
+  --color-primary-700: oklch(0.39 0.1377 32.79);
+  --color-primary-800: oklch(0.29 0.0983 33.63);
+  --color-primary-900: oklch(0.2 0.0606 36.65);
+  --color-primary-950: oklch(0.13 0.0336 42.2);
+
+  /* neutral */
+  --color-neutral-50: oklch(0.97 0 0);
+  --color-neutral-100: oklch(0.93 0 0);
+  --color-neutral-200: oklch(0.86 0 0);
+  --color-neutral-300: oklch(0.8 0 0);
+  --color-neutral-400: oklch(0.73 0 0);
+  --color-neutral-500: oklch(0.65 0 0);
+  --color-neutral-600: oklch(0.56 0 0);
+  --color-neutral-700: oklch(0.46 0 0);
+  --color-neutral-800: oklch(0.34 0 0);
+  --color-neutral-900: oklch(0.23 0 0);
+  --color-neutral-950: oklch(0.13 0 0);
+}
+
+html, body {
+  width: 100vw;
+  overflow-x: clip;
+  background-color: var(--color-neutral-950);
+  color: white;
+}
+
+@layer components {
+  .text-title {
+    @apply lg:text-5xl md:text-3xl text-xl;
+    @apply font-bold;
+  }
+
+  .text-heading {
+    @apply lg:text-3xl/10 md:text-2xl/9 text-lg/7;
+    @apply text-primary-200;
+    @apply font-bold;
+    @apply w-fit;
+    border-bottom-width: 3px;
+    border-bottom-style: solid;
+    border-image: linear-gradient(to right, var(--color-primary-400), var(--color-primary-300));
+    border-image-slice: 1;
+  }
+
+  .text-subheading {
+    @apply lg:text-xl md:text-lg text-base;
+    @apply font-semibold; 
+  }
+
+  .text-body {
+    @apply lg:text-lg md:text-base text-sm;
+    @apply text-justify;
+  }
+
+  .text-caption {
+    @apply text-xs md:text-sm lg:text-base;
+    @apply tracking-wider;
+  }
+
+  .text-link {
+    @apply text-white hover:text-primary-300;
+    @apply lg:text-lg md:text-base text-sm;
+    transition: color ease 0.3s;
+  }
+}
