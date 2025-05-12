@@ -2,6 +2,7 @@
 import 'tailwindcss';
 import ProjDisplay from './ProjDisplay.astro';
 import { projects } from '../data/projects';
+import { Icon } from 'astro-icon/components';
 
 const initialProj = projects.slice(0, 3); 
 const finalProj = projects.slice(3);
@@ -17,7 +18,11 @@ const finalProj = projects.slice(3);
     </div>
     <div class="flex flex-col-reverse items-center">
       <input class="hidden" type="checkbox" id="collapsible">
-      <label for="collapsible" class="cursor-pointer w-fit px-8 py-4 pt-3 border-b border-r border-l border-neutral-500 rounded-b-[95%]">see more</label>
+      <label for="collapsible" class="flex flex-row gap-1 items-center justify-center cursor-pointer md:w-48 w-40 px-8 py-4 pt-3 border-b border-r border-l border-neutral-500 rounded-b-[95%]">
+        <span class="more">see more</span>
+        <span class="less">see less</span>
+        <Icon class="arrow-down" name="line-md:chevron-small-double-down"/>
+      </label>
       <div class="seperator text-subcaption text-center px-8 md:pb-10 pb-6 border-b border-b-neutral-500 w-full rounded-b-full scale-x-115">*core tech: solid buttons; secondary tech: outlined badges; minimal interaction: white badges</div>
       <div class="collapsible flex flex-col md:gap-10 gap-8">
         {finalProj.map((project) => (
@@ -35,7 +40,7 @@ const finalProj = projects.slice(3);
     opacity: 1;
     position: relative;
     display: none;
-    transition: opacity 0.5s ease, display 0.5s ease allow-discrete;
+    transition: opacity 0.75s ease, display 0.75s ease allow-discrete;
   }
 
   @starting-style {
@@ -44,11 +49,46 @@ const finalProj = projects.slice(3);
     }
   }
 
-  input[type=checkbox]:checked + label + div + .collapsible {
-    display: flex;
+  input[type=checkbox]:checked {
+    + label {
+      + div + .collapsible {
+        display: flex;
+      }
+
+      + .seperator {
+        @apply md:mt-10 mt-8;
+      }
+
+      > .arrow-down {
+        transform: rotate(180deg);
+      }
+
+      > .less {
+        opacity: 1;
+        width: w-max;
+      }
+
+      > .more {
+        opacity: 0;
+        width: 0;
+      }
+    }
+  } 
+
+  input[type=checkbox]:not(:checked) + label {
+    > .less {
+      opacity: 0;
+      width: 0;
+    }
+
+    > .more {
+      opacity: 1;
+      width: w-max;
+    }
   }
 
-  input[type=checkbox]:checked + label + .seperator {
-    @apply md:mt-10 mt-8
+  .arrow-down {
+    transform: rotate(0deg);
+    transition: transform 0.3s ease;
   }
 </style>

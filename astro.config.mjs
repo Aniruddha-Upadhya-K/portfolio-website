@@ -1,5 +1,6 @@
 // @ts-check
 import { defineConfig, fontProviders } from 'astro/config';
+import icon from "astro-icon";
 
 import tailwindcss from '@tailwindcss/vite';
 
@@ -12,7 +13,11 @@ export default defineConfig({
     plugins: [tailwindcss()]
   },
 
-  integrations: [partytown(), sitemap()],
+  integrations: [partytown(), sitemap(), icon({
+    include: {
+      mdi: ["*"],
+    }
+  })],
 
   experimental: {
     fonts: [

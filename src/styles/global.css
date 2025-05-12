@@ -38,6 +38,7 @@ html, body {
   overflow-x: clip;
   background-color: var(--color-neutral-950);
   color: white;
+  scroll-behavior: smooth;
 }
 
 @layer components {

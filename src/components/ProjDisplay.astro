@@ -2,6 +2,7 @@
 import '../styles/global.css';
 import type { Project } from '../data/type'
 import Badge from './ui/Badge.astro'
+import { Icon } from 'astro-icon/components';
 
 type Prop = {
   project: Project;
@@ -23,9 +24,15 @@ const { project } = Astro.props as Prop;
     </div>
     <div class="text-body lowercase">{project.desc}</div>
   </div>
-  <div class="">
-    {project.url.github && <a href={project.url.github}>github</a>}
-    {project.url.website && <a href={project.url.website}>website</a>}
+  <div class="flex flex-row gap-4 items-center">
+    {project.url.github && <a class="flex flex-row items-center md:gap-2 gap-1" href={project.url.github}>
+      <span class="mt-[3px]">github</span>
+      <Icon name="mdi:github"/>
+    </a>}
+    {project.url.website && <a class="flex flex-row items-center md:gap-2 gap-1" href={project.url.website}>
+      <span class="mt-[3px]">website</span>
+      <Icon name="mdi:external-link"/>
+    </a>}
   </div>
 </div>
 
