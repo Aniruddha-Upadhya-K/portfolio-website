@@ -1,0 +1,27 @@
+---
+import '../../styles/global.css';
+
+type Props = {
+  type?: "default" | "outline" | "ghost";
+}
+
+const { type = "default" } = Astro.props as Props;
+---
+
+{(type == "default") && 
+<button class="md:px-4 md:py-[2px] px-4 py-1 text-caption bg-gradient-to-br from-primary-600 to-primary-300 cursor-pointer rounded-3xl">
+  <slot />
+</button>
+}
+
+{(type == "outline") &&
+<button class="md:px-4 md:py-[2px] px-4 py-1 text-caption flex items-center border border-primary-300 text-primary-300 font-bold cursor-pointer rounded-3xl">
+  <slot />
+</button>
+}
+
+{(type == "ghost") && 
+<button class="md:px-4 md:py-[2px] px-4 py-1 text-caption border border-neutral-500 text-neutral-500 font-bold cursor-pointer rounded-3xl">
+  <slot />
+</button>
+}

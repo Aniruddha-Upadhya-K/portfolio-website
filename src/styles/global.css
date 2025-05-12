@@ -42,14 +42,14 @@ html, body {
 
 @layer components {
   .text-title {
-    @apply lg:text-5xl md:text-3xl text-xl;
-    @apply font-bold;
+    @apply lg:text-6xl md:text-4xl text-2xl;
+    @apply font-bold text-left;
   }
 
   .text-heading {
-    @apply lg:text-3xl/10 md:text-2xl/9 text-lg/7;
+    @apply lg:text-4xl/10 md:text-3xl/9 text-2xl/7;
     @apply text-primary-200;
-    @apply font-bold;
+    @apply font-bold text-left;
     @apply w-fit;
     border-bottom-width: 3px;
     border-bottom-style: solid;
@@ -58,23 +58,30 @@ html, body {
   }
 
   .text-subheading {
-    @apply lg:text-xl md:text-lg text-base;
-    @apply font-semibold; 
+    @apply lg:text-2xl md:text-xl text-lg;
+    @apply font-semibold text-left; 
   }
 
   .text-body {
-    @apply lg:text-lg md:text-base text-sm;
+    @apply lg:text-xl md:text-lg text-base;
     @apply text-justify;
   }
 
   .text-caption {
-    @apply text-xs md:text-sm lg:text-base;
-    @apply tracking-wider;
+    @apply lg:text-lg md:text-base text-sm;
+    @apply tracking-widest;
+    @apply italic text-left;
+  }
+
+  .text-subcaption {
+    @apply lg:text-base md:text-sm text-xs;
+    @apply tracking-widest;
+    @apply italic text-left;
   }
 
   .text-link {
     @apply text-white hover:text-primary-300;
-    @apply lg:text-lg md:text-base text-sm;
+    @apply lg:text-xl md:text-lg text-base text-left;
     transition: color ease 0.3s;
   }
 }

@@ -3,7 +3,8 @@ import Layout from '../layouts/Layout.astro';
 import Navbar from '../components/HomeNavbar.astro'
 import Hero from '../components/Hero.astro';
 import About from '../components/About.astro';
-import Exp from '../components/Exp.astro';
+import Experience from '../components/Experiences.astro';
+import Projects from '../components/Projects.astro';
 ---
 
 <Layout>
@@ -11,5 +12,9 @@ import Exp from '../components/Exp.astro';
     <Navbar />
     <Hero />
     <About />
+    <div class="relative z-10 bg-neutral-950 md:pt-16 pt-20">
+      <Experience />
+      <Projects />
+    </div>
   </>
 </Layout>
