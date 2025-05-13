@@ -17,3 +17,10 @@ export type Project = {
   url: ProjectUrl;
   techs: Tech[];
 }
+
+export type Education = {
+  name: string;
+  date: string;
+  speciality: string;
+  location: string;
+}

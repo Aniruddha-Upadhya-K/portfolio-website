@@ -1,0 +1,31 @@
+---
+import '../styles/global.css';
+import { education } from '../data/education';
+---
+
+<div id="edu" class="flex flex-col md:gap-8 gap-4 md:scroll-mt-24 scroll-mt-16">
+  <h1 class="text-heading">Education</h1>
+  <div class="relative">
+    <div class="absolute h-full top-2 lg:left-[7px] left-[5px] w-0.5 bg-neutral-300 rounded-sm"></div>
+    <div class="relative z-10 flex flex-col md:gap-10 gap-6">
+      {education.map(edu => (
+      <div class="flex flex-col">
+        <div class="flex flex-row sm:items-center items-start md:gap-8 gap-4">
+          <div class="lg:w-4 w-3 lg:h-4 h-3 bg-primary-300 rounded-full outline-8 outline-neutral-950 sm:mt-0 mt-[9px]"></div>
+          <div class="text-subheading lowercase">
+            {edu.name}, {edu.location}
+          </div>
+        </div>
+        <div class="flex flex-row md:gap-8 gap-4">
+          <div class="lg:w-4 w-3 lg:h-4 h-3"></div>
+          <div class="text-subcaption">{edu.date}</div>
+        </div>
+        <div class="flex flex-row md:gap-8 gap-4">
+          <div class="lg:w-4 w-3 lg:h-4 h-3"></div>
+          <div class="lowercase">{edu.speciality}</div>
+        </div>
+      </div>
+      ))}
+    </div>
+  </div>
+</div>

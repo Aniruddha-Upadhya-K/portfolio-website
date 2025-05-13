@@ -21,8 +21,8 @@ export const projects: Project[] = [
     techs: [
       { name: "YOLOv9", type: "main" },
       { name: "Numpy", type: "main" },
-      { name: "Pandas", type: "sub" },
       { name: "CV2", type: "main" },
+      { name: "Pandas", type: "sub" },
       { name: "Scikit learn", type: "sub" },
       { name: "Matplotlib", type: "sub" },
       { name: "Flask", type: "other" },
@@ -31,7 +31,7 @@ export const projects: Project[] = [
   },
   {
     name: "Kvdhama Website",
-    desc: "Informational website for Ashraya Dhama, supporting English and Kannada with an integrated admin dashboard that allows for easy management of dynamic content, including text, images, videos, and links",
+    desc: "Informational website for Ashraya Dhama, supporting English and Kannada with an integrated admin dashboard that allows for easy management of dynamic content, including text, images, videos, and links.",
     date: "Apr 2024 - May 2024",
     url: {
       github: "https://github.com/Inspirante-Tech/krishnaveni-ashrayadhama",
@@ -112,7 +112,7 @@ export const projects: Project[] = [
   },
   {
     name: "Hungry Animal Rush",
-    desc: "A top-down Unity game where players prevent animals from escaping by throwing food, similar to Space Invaders gameplay. The game challenges players to manage waves of animals with increasing difficulty",
+    desc: "A top-down Unity game where players prevent animals from escaping by throwing food, similar to Space Invaders gameplay. The game challenges players to manage waves of animals with increasing difficulty.",
     date: "July 2023",
     url: {},
     techs: [
