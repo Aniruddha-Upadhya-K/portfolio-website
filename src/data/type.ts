@@ -24,3 +24,8 @@ export type Education = {
   speciality: string;
   location: string;
 }
+
+export type Skills = {
+  name: string;
+  child?: Skills[];
+}

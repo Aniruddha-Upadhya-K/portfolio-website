@@ -1,0 +1,15 @@
+---
+import '../styles/global.css';
+import type { Skills } from '../data/type';
+import { skills } from '../data/skills';
+import SkillNode from './SkillNode.astro';
+---
+
+<div class="flex flex-col md:gap-8 gap-4">
+  <h1 class="text-heading">Skills</h1>
+  <div class="flex flex-col md:gap-4 gap-2 bg-neutral-900 rounded-3xl sm:p-8 sm:py-8 p-2 py-4">
+    <p class="lg:text-2xl md:text-xl text-base font-semibold text-primary-300"><span class="text-primary-400 pr-2">></span>tree <span class="text-primary-200">~/skills/</span></p>
+    <SkillNode skill={skills}/>
+  </div>
+</div>
+
