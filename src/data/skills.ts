@@ -12,17 +12,17 @@ export const skills: Skills = {
           child: [
             { name: "postgres" },
             {
-              name: "c / c++",
+              name: "c_c++",
               child: [{ name: "gdb" }, { name: "valgrind" }],
             },
             { name: "python" },
             {
-              name: "js / ts",
-              child: [{ name: "react.js / next.js" }],
+              name: "js_ts",
+              child: [{ name: "reactjs_nextjs" }],
             },
           ],
         },
-        { name: "vim / neovim" },
+        { name: "vim_neovim" },
       ],
     },
   ],
