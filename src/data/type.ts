@@ -7,12 +7,15 @@ export type Tech = {
 
 export type ProjectUrl = {
   github?: string;
+  website?: string;
+  doc?: string;
   [key: string]: string | undefined; // Allows for other URLs like 'website'
 }
 
 export type Project = {
   name: string;
   desc: string;
+  sidenote?: string;
   date: string;
   url: ProjectUrl;
   techs: Tech[];

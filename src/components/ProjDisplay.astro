@@ -22,14 +22,21 @@ const { project } = Astro.props as Prop;
       <Badge type={tech.type === 'main' ? "default" : (tech.type === 'sub' ? "outline" : "ghost")}>{tech.name}</Badge>
       ))}
     </div>
-    <div class="text-body lowercase">{project.desc}</div>
+    <div class="flex flex-col gap-1">
+      <p class="text-body lowercase">{project.desc}</p>
+      {project.sidenote && <p class="text-subcaption lowercase text-justify">{project.sidenote}</p>}
+    </div>
   </div>
   <div class="flex flex-row gap-4 items-center">
-    {project.url.github && <a class="flex flex-row items-center md:gap-2 gap-1" href={project.url.github}>
+    {project.url.patent && <a target="_blank" class="flex flex-row items-center md:gap-2 gap-1" href={project.url.patent}>
+      <span class="mt-[3px]">patent</span>
+      <Icon name="line-md:file-document"/>
+    </a>}
+    {project.url.github && <a target="_blank" class="flex flex-row items-center md:gap-2 gap-1" href={project.url.github}>
       <span class="mt-[3px]">github</span>
       <Icon name="mdi:github"/>
     </a>}
-    {project.url.website && <a class="flex flex-row items-center md:gap-2 gap-1" href={project.url.website}>
+    {project.url.website && <a target="_blank" class="flex flex-row items-center md:gap-2 gap-1" href={project.url.website}>
       <span class="mt-[3px]">website</span>
       <Icon name="mdi:external-link"/>
     </a>}

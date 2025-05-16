@@ -2,7 +2,7 @@ import type { Project } from "./type";
 export const experiences: Project[] = [
   {
     name: "Edgeverve Systems Ltd.",
-    desc: "",
+    desc: "Contributing to enhancements in the company’s core codebase using C/C++, and writing SQL queries to support new feature development and data analysis along with gaining hands-on experience with debugging and profiling tools such as GDB and Valgrin",
     date: "Feb 2025 - Present",
     url: {},
     techs: [
@@ -16,7 +16,7 @@ export const experiences: Project[] = [
   },
   {
     name: "JP Morgan Chase & Co. Research Internship",
-    desc: "Designing and developing end to end framework that enhances privacy in Federated Learning system using zero-knowledge proofs (zkp), enabling secure model training without exposing raw participant data.",
+    desc: "Designed and developed end to end framework that enhances privacy in Federated Learning system using zero-knowledge proofs (zkp), enabling secure model training without exposing raw participant data.",
     date: "Sep 2023 - Dec 2024",
     url: {},
     techs: [
