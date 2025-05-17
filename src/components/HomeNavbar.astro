@@ -1,14 +1,84 @@
 ---
 import "../styles/global.css"
+
+const links: string[] = ["about", "experiences", "education", "projects", "skills"];
 ---
 
-<div class="flex flex-row justify-between border-b border-b-neutral-500 fixed w-full max-w-7xl left-1/2 -translate-x-1/2 top-0 z-[999] px-10 py-4 text-subheading rounded-b-xl shadow-md shadow-neutral-900 backdrop-blur-md">
-  <a class="text-white hover:text-primary-300 transition-colors duration-300" href="./">aniruddha</a>
+<div class="flex flex-row justify-between items-center border-b border-b-neutral-500 fixed w-full max-w-7xl left-1/2 -translate-x-1/2 top-0 z-[999] md:px-10 px-6 py-4 text-subheading rounded-b-xl shadow-md shadow-neutral-900 backdrop-blur-md">
+  <a class="text-white hover:text-primary-300 transition-colors duration-300" href="/">aniruddha</a>
   <div class="md:flex hidden flex-row xl:gap-10 md:gap-6 ">
-    <a href="#aboutme" class="text-link">about</a>
-    <a href="#exp" class="text-link">experiences</a>
-    <a href="#edu" class="text-link">education</a>
-    <a href="#projects" class="text-link">projects</a>
-    <a href="#skills" class="text-link">skills</a>
+    {links.map(link => (
+      <a href=`#${link}` class="text-link">{link}</a>
+    ))}
   </div>
+  <div class="md:hidden block h-full">
+    <input type="checkbox" id="nav" class="hidden">
+    <label for="nav" class="block relative h-full w-7 px-[0.25rem] py-3 z-[100] cursor-pointer">
+      <div class="h-3 relative overflow-clip">
+        <div class="absolute h-0.25 w-full top-0 bg-neutral-500"></div>
+        <div class="absolute h-0.25 w-full top-1/2 -translate-y-1/2 bg-neutral-500"></div>
+        <div class="absolute h-0.25 w-full bottom-0 bg-neutral-500"></div>
+      </div>
+    </label>
+    <label for="nav" class="overlay fixed z-50 h-[100dvh] w-[100vh] backdrop-blur-md bg-neutral-900/30 top-0 left-0"></label>
+    <div class="mobile-navbar flex fixed z-[60] h-[100dvh] top-0 transition-transform duration-300">
+      <div class="h-full sm:w-28 w-20 rounded-l-full border-l border-l-neutral-500 bg-neutral-950"></div>
+      <div class="flex flex-col sm:gap-10 gap-8 sm:pl-8 sm:pr-28 pr-12 sm:py-32 py-24 bg-neutral-950">
+        <div class="flex flex-col sm:gap-6 gap-4">
+          {links.map(link => (
+            <a href=`#${link}` class="hover:text-primary-300 transition-colors duration-300">{link}</a>
+          ))}
+        </div>
+      </div>
+    </div>
+  </div>
+
 </div>
+
+<style>
+  .overlay {
+    display: none;
+    opacity: 1;
+    transition: opacity 0.3s ease, display 0.3s ease allow-discrete;
+  }
+
+  @starting-style {
+    .overlay {
+      opacity: 0;
+    }
+  }
+
+  .mobile-navbar {
+    left: 100%;
+    transform: translateX(-2px);
+  }
+
+  label div {
+    transform-origin: center center;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    opacity: 1;
+  }
+
+  #nav:checked + label {
+    + .overlay {
+      display: block;
+    }
+
+    + .overlay + .mobile-navbar {
+      transform: translateX(-100%);
+    }
+
+    > div > div:nth-child(1) {
+      transform: translateY(5.5px) scaleX(1.5) rotate(36.89deg);
+    }
+
+    > div > div:nth-child(2) {
+      transform: scaleX(0);
+      opacity: 0;
+    }
+
+    > div > div:nth-child(3) {
+      transform: translateY(-5.5px) scaleX(1.5) rotate(-36.89deg);
+    }
+  }
+</style>
