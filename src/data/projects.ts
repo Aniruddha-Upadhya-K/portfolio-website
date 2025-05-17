@@ -109,6 +109,7 @@ export const projects: Project[] = [
   {
     name: "Portfolio Website",
     desc: "Whatever you are reading, is this project in action. My official portfolio website, with zero Javascript shipped to your device!",
+    sidenote: "*excluding analytics ofcourse",
     date: "May 2025 - Present",
     url: {
       website: "/",

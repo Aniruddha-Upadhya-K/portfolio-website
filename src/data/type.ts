@@ -9,7 +9,7 @@ export type ProjectUrl = {
   github?: string;
   website?: string;
   doc?: string;
-  [key: string]: string | undefined; // Allows for other URLs like 'website'
+  patent?: string;
 }
 
 export type Project = {
@@ -31,4 +31,9 @@ export type Education = {
 export type Skills = {
   name: string;
   child?: Skills[];
+}
+
+export type Contact = {
+  name: "twitter" | "linkedin" | "github" | "resume" | "mail";
+  url: string;
 }

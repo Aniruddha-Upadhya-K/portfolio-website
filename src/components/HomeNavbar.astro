@@ -1,5 +1,7 @@
 ---
 import "../styles/global.css"
+import { Icon } from 'astro-icon/components';
+import { contacts } from "../data/contacts"
 
 const links: string[] = ["about", "experiences", "education", "projects", "skills"];
 ---
@@ -14,20 +16,34 @@ const links: string[] = ["about", "experiences", "education", "projects", "skill
   <div class="md:hidden block h-full">
     <input type="checkbox" id="nav" class="hidden">
     <label for="nav" class="block relative h-full w-7 px-[0.25rem] py-3 z-[100] cursor-pointer">
-      <div class="h-3 relative overflow-clip">
+      <div class="h-3 relative">
         <div class="absolute h-0.25 w-full top-0 bg-neutral-500"></div>
         <div class="absolute h-0.25 w-full top-1/2 -translate-y-1/2 bg-neutral-500"></div>
         <div class="absolute h-0.25 w-full bottom-0 bg-neutral-500"></div>
       </div>
     </label>
-    <label for="nav" class="overlay fixed z-50 h-[100dvh] w-[100vh] backdrop-blur-md bg-neutral-900/30 top-0 left-0"></label>
-    <div class="mobile-navbar flex fixed z-[60] h-[100dvh] top-0 transition-transform duration-300">
+    <label for="nav" class="overlay fixed z-50 h-[100dvh] w-[100vw] bg-black/75 top-0 left-0"></label>
+    <div class="mobile-navbar flex fixed z-[60] min-h-[100dvh] h-full top-0 transition-transform duration-300">
       <div class="h-full sm:w-28 w-20 rounded-l-full border-l border-l-neutral-500 bg-neutral-950"></div>
-      <div class="flex flex-col sm:gap-10 gap-8 sm:pl-8 sm:pr-28 pr-12 sm:py-32 py-24 bg-neutral-950">
-        <div class="flex flex-col sm:gap-6 gap-4">
+      <div class="flex flex-col justify-between h-full sm:gap-10 gap-8 sm:pt-32 sm:pb-16 pt-24 pb-10 bg-neutral-950 overflow-scroll">
+        <div class="flex flex-col sm:gap-6 gap-4 sm:pl-8 sm:pr-28 pr-12">
           {links.map(link => (
             <a href=`#${link}` class="hover:text-primary-300 transition-colors duration-300">{link}</a>
           ))}
+        </div>
+        <div class="flex flex-row flex-wrap gap-x-6 gap-y-4">
+          {contacts.map(contact => {
+            return contact.name == "mail" ? (<a href={`mailto:${contact.url}`} class="text-link flex gap-1 items-center">
+              <Icon name="mdi:email" />
+              <span>mail</span>
+            </a>) : (<a href={contact.url} class="text-link flex gap-1 items-center" target="_blank">
+              {contact.name == 'linkedin' && <Icon name="mdi:linkedin" />}
+              {contact.name == 'twitter' && <Icon name="mdi:twitter" />}
+              {contact.name == 'github' && <Icon name="mdi:github" />}
+              {contact.name == 'resume' && <Icon name="mdi:resume" />}
+              <span>{contact.name}</span>
+            </a>)
+            })}
         </div>
       </div>
     </div>
@@ -40,6 +56,7 @@ const links: string[] = ["about", "experiences", "education", "projects", "skill
     display: none;
     opacity: 1;
     transition: opacity 0.3s ease, display 0.3s ease allow-discrete;
+    pointer-events: all;
   }
 
   @starting-style {
@@ -69,7 +86,7 @@ const links: string[] = ["about", "experiences", "education", "projects", "skill
     }
 
     > div > div:nth-child(1) {
-      transform: translateY(5.5px) scaleX(1.5) rotate(36.89deg);
+      transform: scale(1.5) translateY(5px) rotate(45deg);
     }
 
     > div > div:nth-child(2) {
@@ -78,7 +95,7 @@ const links: string[] = ["about", "experiences", "education", "projects", "skill
     }
 
     > div > div:nth-child(3) {
-      transform: translateY(-5.5px) scaleX(1.5) rotate(-36.89deg);
+      transform: scale(1.5) translateY(-2.5px) rotate(-45deg);
     }
   }
 </style>
