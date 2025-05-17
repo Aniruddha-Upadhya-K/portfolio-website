@@ -4,7 +4,7 @@ import { contacts } from "../data/contacts";
 import { Icon } from 'astro-icon/components';
 ---
 
-<div class="w-full h-[100vmax] flex items-center sticky top-0 z-0">
+<div class="w-full h-[100vh] flex items-center sticky top-0 z-0">
   <div class="w-full flex flex-col px-2 md:gap-8 gap-4">
     <div class="w-full md:whitespace-nowrap text-outline text-huge tracking-widest text-center">hello there,</div>
     <div class="w-full flex md:flex-row flex-col justify-center items-center xl:gap-12 md:gap-8 gap-4">
@@ -18,11 +18,11 @@ import { Icon } from 'astro-icon/components';
       <div class="flex flex-row gap-4 py-2 px-4 pr-14 rounded-full bg-neutral-950">
         {contacts.map(contact => {
         return contact.name == "mail" ? (
-        <a href={`mailto:${contact.url}`} class="text-link">
+        <a target="_blank" href={`mailto:${contact.url}`} class="text-link">
           <Icon name="mdi:email" class="text-primary-300 text-3xl"/>
         </a>
         ) : (
-        <a href={contact.url} class="text-link text-primary-300 text-3xl">
+        <a target="_blank" href={contact.url} class="text-link text-primary-300 text-3xl">
           {contact.name == "linkedin" && <Icon name="mdi:linkedin"/>}
           {contact.name == "github" && <Icon name="mdi:github"/>}
           {contact.name == "twitter" && <Icon name="mdi:twitter"/>}

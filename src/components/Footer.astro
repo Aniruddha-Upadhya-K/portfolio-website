@@ -1,0 +1,23 @@
+---
+import '../styles/global.css';
+import { Icon } from 'astro-icon/components';
+import { contacts } from '../data/contacts';
+---
+
+<footer class="flex flex-col gap-2 justify-center items-center --mt-4 py-8 relative">
+  <div class="absolute w-[100vw] md:h-32 h-16 top-0 left-1/2 -translate-x-1/2 rounded-t-full border-t border-t-neutral-500"></div>
+  <p class="flex flex-row gap-2 justify-center items-center">Made with <Icon name="line-md:heart-filled" /> by Aniruddha Upadhya K</p>
+  <div class="flex flex-row gap-2">
+    {contacts.map(contact => {
+    return contact.name == "mail" ? (<a href={`mailto:${contact.url}`} class="text-link">
+      <Icon name="mdi:email" />
+    </a>) : (<a href={contact.url} class="text-link" target="_blank">
+      {contact.name == 'linkedin' && <Icon name="mdi:linkedin" />}
+      {contact.name == 'twitter' && <Icon name="mdi:twitter" />}
+      {contact.name == 'github' && <Icon name="mdi:github" />}
+      {contact.name == 'resume' && <Icon name="mdi:resume" />}
+    </a>)
+    })}
+  </div>
+  <p>&copy; 2025</p>
+</footer>

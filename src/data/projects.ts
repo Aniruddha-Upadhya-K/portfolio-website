@@ -97,16 +97,6 @@ export const projects: Project[] = [
     ],
   },
   {
-    name: "Hungry Animal Rush",
-    desc: "A top-down Unity game where players prevent animals from escaping by throwing food, similar to Space Invaders gameplay. The game challenges players to manage waves of animals with increasing difficulty.",
-    date: "July 2023",
-    url: {},
-    techs: [
-      { name: "Unity", type: "main" },
-      { name: "C#", type: "main" },
-    ],
-  },
-  {
     name: "Portfolio Website",
     desc: "Whatever you are reading, is this project in action. My official portfolio website, with zero Javascript shipped to your device!",
     sidenote: "*excluding analytics ofcourse",
