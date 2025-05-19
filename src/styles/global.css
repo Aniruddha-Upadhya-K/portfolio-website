@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 @theme inline {
-  --font-mono: var(--font-hack);
+  /* --font-mono: var(--font-hack); */
   --font-sans: var(--font-overpass);
 }
 
