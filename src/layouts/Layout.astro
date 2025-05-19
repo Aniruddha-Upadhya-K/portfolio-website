@@ -1,22 +1,11 @@
 ---
-import { Font } from 'astro:assets';
 import "../styles/global.css"
+import Head from "../components/Head.astro"
 ---
 
 <!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-    <link rel="manifest" href="/site.webmanifest">
-		<meta name="generator" content={Astro.generator} />
-		<title>Aniruddha Upadhya K</title>
-    <Font cssVariable="--font-overpass" preload />
-    <Font cssVariable="--font-hack" preload />
-	</head>
+  <Head />
 	<body class="text-body">
     <div class="max-w-7xl mx-auto relative lg:px-24 md:px-8 px-4">
       <slot />
