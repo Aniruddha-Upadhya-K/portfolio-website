@@ -1,42 +1,12 @@
 // @ts-check
 import { defineConfig, fontProviders } from 'astro/config';
-import icon from "astro-icon";
-import { defineCollection, z, reference } from 'astro:content';
-import { glob } from 'astro/loaders';
-
-import tailwindcss from '@tailwindcss/vite';
 
 import partytown from '@astrojs/partytown';
 import sitemap from '@astrojs/sitemap';
 
+import tailwindcss from '@tailwindcss/vite';
 import robotsTxt from "astro-robots-txt";
-
-const projects = defineCollection({
-  loader: glob({ pattern: "**/*.md", base: "./src/data/projects" }),
-  schema: z.object({
-    title: z.string(),
-    technologies: z.array(z.string()),
-    tags: z.array(z.string()),
-    desc: z.string(),
-    next: z.string().optional(),
-    prev: z.string().optional(),
-    relatedBlogs: z.array(reference('blogs')).optional()
-  })
-});
-
-const blogs = defineCollection({
-  loader: glob({ pattern: "**/*.md", base: "./src/data/blogs" }),
-  schema: z.object({
-    title: z.string(),
-    tags: z.array(z.string()),
-    desc: z.string(),
-    next: z.string().optional(),
-    prev: z.string().optional(),
-    relatedBlogs: z.array(z.union([reference('blogs'), reference('projects')])).optional()
-  })
-});
-
-export const collections = { blogs, projects };
+import icon from "astro-icon";
 
 // https://astro.build/config
 export default defineConfig({
