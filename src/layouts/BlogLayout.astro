@@ -1,0 +1,18 @@
+---
+import "../styles/blog.css";
+import BlogHead from "../components/head/BlogHead.astro";
+
+type Prop = {
+  title: string,
+  desc: string
+}
+const { title, desc } = Astro.props as Prop;
+---
+
+<!doctype html>
+<html lang="en">
+  <BlogHead title={title} desc={desc} />
+	<body class="max-w-7xl mx-auto relative lg:px-24 md:px-8 px-4">
+    <slot />
+	</body>
+</html>

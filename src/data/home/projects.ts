@@ -18,7 +18,7 @@ export const projects: Project[] = [
   },
   {
     name: "Kilo Text Editor",
-    desc: "A fully memory-safe, Nano-like text editor built in C. It supports essential editing keys, such as navigation with arrows, TAB, backspace, home/end, and page up/down, as well as control commands for quitting. The editor features a dynamic status line displaying file information, line count, and helpful messages.",
+    desc: "A fully memory-safe, Nano-like text editor built in C. It supports essential editing keys, such as navigation with arrows, TAB, backspace, home/end, and page up/down, as well as control commands for quitting, saving the file. The editor features a dynamic status line displaying file information, line count, and helpful messages.",
     date: "Apr 2025 - Present",
     url: {
       github: "https://github.com/Aniruddha-Upadhya-K/kilo",
