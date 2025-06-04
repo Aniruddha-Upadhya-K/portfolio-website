@@ -1,0 +1,142 @@
+@import 'tailwindcss';
+@import './theme.css';
+
+html, body {
+  width: 100vw;
+  background-color: var(--color-neutral-950);
+  color: white;
+  scroll-behavior: smooth;
+  font-family: var(--font-sans);
+}
+
+body {
+  @apply p-4;
+}
+
+@layer components {
+  h1 {
+    @apply lg:text-4xl/10 md:text-3xl/9 text-2xl/7;
+    @apply text-primary-200;
+    @apply font-bold text-left;
+    @apply w-fit;
+    @apply my-10;
+    border-bottom-width: 3px;
+    border-bottom-style: solid;
+    border-image: linear-gradient(to right, var(--color-primary-400), var(--color-primary-300));
+    border-image-slice: 1;
+  }
+
+  h2 {
+    @apply lg:text-4xl md:text-3xl text-2xl;
+    @apply font-bold text-left; 
+    @apply my-4;
+  }
+
+  h3 {
+    @apply lg:text-3xl md:text-2xl text-xl;
+    @apply font-semibold;
+    @apply my-3;
+  }
+
+  h4 {
+    @apply lg:text-2xl md:text-xl text-xl;
+    @apply my-2;
+  }
+
+  h5 {
+    @apply lg:text-xl md:text-lg text-base;
+    @apply font-semibold italic;
+    @apply my-1;
+  }
+
+  h6, p, li, ol, ul {
+    @apply lg:text-xl md:text-lg text-base;
+    @apply text-justify;
+    @apply my-2;
+  }
+
+  .text-caption {
+    @apply lg:text-lg md:text-base text-sm;
+    @apply tracking-widest;
+    @apply italic text-left;
+  }
+
+  .text-subcaption {
+    @apply lg:text-base md:text-sm text-xs;
+    @apply tracking-widest;
+    @apply italic text-left;
+  }
+
+  a {
+    @apply text-primary-200 hover:text-primary-300;
+    @apply lg:text-xl md:text-lg text-base text-left;
+    transition: color ease 0.3s;
+  }
+
+  blockquote {
+    @apply p-4;
+    @apply my-4;
+    @apply bg-neutral-900/50;
+    @apply rounded-md;
+
+    > * {
+      @apply pl-2;
+      @apply border-l-4 border-l-neutral-500;
+      @apply m-0;
+    }
+  }
+
+  code {
+      @apply font-mono;
+      @apply lg:text-base md:text-base text-sm;
+  }
+
+  p {
+    code {
+      @apply font-semibold;
+      @apply bg-primary-200 text-neutral-950;
+      @apply px-2 py-0.5 rounded-sm;
+    }
+  }
+
+  pre {
+    @apply p-4;
+    @apply my-4;
+    @apply rounded-md;
+    @apply bg-neutral-900/50;
+  }
+
+  li.task-list-item {
+    @apply block;
+  }
+
+  li > p {
+    @apply m-auto;
+  }
+
+  ul > li {
+    @apply list-disc list-inside;
+    @apply ml-8;
+
+    > ul > li {
+      @apply list-[circle];
+
+      > ul > li {
+        @apply list-[disclosure-closed];
+      }
+    }
+
+    > p {
+      @apply inline-block;
+    }
+  }
+
+  ol > li {
+    @apply list-decimal list-inside;
+    @apply ml-8;
+
+    > ol > li {
+      @apply list-[lower-roman];
+    }
+  }
+}

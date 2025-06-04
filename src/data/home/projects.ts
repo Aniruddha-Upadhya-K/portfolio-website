@@ -4,7 +4,7 @@ export const projects: Project[] = [
     name: "Mammogram Analysis and Breast Cancer Localization System",
     desc: "No its not another breast tumor detection model, but a comprehensive system for precise 3D localization of breast tumors, combining CC and MLO mammogram views to enhance diagnostic accuracy. The solution calculates the tumor's distance from the chest wall, determines its breast quadrant, and pinpoints its clock-face position, reducing manual workload for radiologists.",
     date: "Aug 2024 - Nov 2024",
-    url: { patent: "./patent_mammogram_analysis_202541004479.pdf" },
+    url: { patent: "/doc/patent_mammogram_analysis_202541004479.pdf" },
     techs: [
       { name: "YOLOv9", type: "main" },
       { name: "Numpy", type: "main" },
@@ -18,7 +18,7 @@ export const projects: Project[] = [
   },
   {
     name: "Kilo Text Editor",
-    desc: "A fully memory-safe, Nano-like text editor built in C. It supports essential editing keys, such as navigation with arrows, TAB, backspace, home/end, and page up/down, as well as control commands for quitting. The editor features a dynamic status line displaying file information, line count, and helpful messages.",
+    desc: "A fully memory-safe, Nano-like text editor built in C. It supports essential editing keys, such as navigation with arrows, TAB, backspace, home/end, and page up/down, as well as control commands for quitting, saving the file. The editor features a dynamic status line displaying file information, line count, and helpful messages.",
     date: "Apr 2025 - Present",
     url: {
       github: "https://github.com/Aniruddha-Upadhya-K/kilo",

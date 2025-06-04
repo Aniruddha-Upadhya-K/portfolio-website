@@ -1,13 +1,14 @@
 // @ts-check
 import { defineConfig, fontProviders } from 'astro/config';
-import icon from "astro-icon";
-
-import tailwindcss from '@tailwindcss/vite';
 
 import partytown from '@astrojs/partytown';
 import sitemap from '@astrojs/sitemap';
 
+import tailwindcss from '@tailwindcss/vite';
 import robotsTxt from "astro-robots-txt";
+import icon from "astro-icon";
+
+import mdx from "@astrojs/mdx";
 
 // https://astro.build/config
 export default defineConfig({
@@ -21,7 +22,7 @@ export default defineConfig({
     include: {
       mdi: ["*"],
     }
-  }), robotsTxt()],
+  }), robotsTxt(), mdx()],
 
   experimental: {
     fonts: [
