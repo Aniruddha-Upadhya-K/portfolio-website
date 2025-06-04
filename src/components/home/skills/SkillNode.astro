@@ -11,7 +11,7 @@ const { skill, classes } = Astro.props as Prop;
 <div class={`relative overflow-clip ${classes}`}>
   {skill.child?.length && <div class={`absolute md:top-[36px] top-8 ${classes ? "md:left-20 left-14" : "left-4"} h-full w-0.5 bg-neutral-300`}></div>}
   <div class="relative">
-    <div class="absolute md:w-10 w-4 h-0.5 bg-neutral-500 md:-left-12 -left-6 md:top-4 top-3"></div>
+    <div class="absolute md:w-10 w-4 h-0.5 bg-neutral-300 md:-left-12 -left-6 md:top-4 top-3"></div>
     <p class="lg:text-2xl md:text-xl text-base md:font-semibold text-primary-200 bg-neutral-900">{skill.name}</p>
   </div>
   {skill.child && skill.child.map(child => (

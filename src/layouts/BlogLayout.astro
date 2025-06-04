@@ -1,6 +1,8 @@
 ---
 import "../styles/blog.css";
 import BlogHead from "../components/head/BlogHead.astro";
+import BlogNavbar from "../components/blog/BlogNavbar.astro"
+import Footer from "../components/Footer.astro";
 
 type Prop = {
   title: string,
@@ -12,7 +14,13 @@ const { title, desc } = Astro.props as Prop;
 <!doctype html>
 <html lang="en">
   <BlogHead title={title} desc={desc} />
-	<body class="max-w-7xl mx-auto relative lg:px-24 md:px-8 px-4">
-    <slot />
+	<body class="text-body">
+    <div class="max-w-6xl mx-auto relative lg:px-24 md:px-8 px-4">
+      <BlogNavbar />
+      <slot />
+      <div class="mt-12">
+        <Footer />
+      </div>
+    </div>
 	</body>
 </html>

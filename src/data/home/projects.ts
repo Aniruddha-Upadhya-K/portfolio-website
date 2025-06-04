@@ -4,7 +4,7 @@ export const projects: Project[] = [
     name: "Mammogram Analysis and Breast Cancer Localization System",
     desc: "No its not another breast tumor detection model, but a comprehensive system for precise 3D localization of breast tumors, combining CC and MLO mammogram views to enhance diagnostic accuracy. The solution calculates the tumor's distance from the chest wall, determines its breast quadrant, and pinpoints its clock-face position, reducing manual workload for radiologists.",
     date: "Aug 2024 - Nov 2024",
-    url: { patent: "./patent_mammogram_analysis_202541004479.pdf" },
+    url: { patent: "/doc/patent_mammogram_analysis_202541004479.pdf" },
     techs: [
       { name: "YOLOv9", type: "main" },
       { name: "Numpy", type: "main" },

@@ -3,11 +3,13 @@
 
 html, body {
   width: 100vw;
-  overflow-x: clip;
   background-color: var(--color-neutral-950);
   color: white;
   scroll-behavior: smooth;
   font-family: var(--font-sans);
+}
+
+body {
   @apply p-4;
 }
 
@@ -66,7 +68,7 @@ html, body {
   }
 
   a {
-    @apply text-white hover:text-primary-300;
+    @apply text-primary-200 hover:text-primary-300;
     @apply lg:text-xl md:text-lg text-base text-left;
     transition: color ease 0.3s;
   }
@@ -85,8 +87,16 @@ html, body {
   }
 
   code {
-    @apply font-mono;
-    @apply lg:text-base md:text-base text-sm;
+      @apply font-mono;
+      @apply lg:text-base md:text-base text-sm;
+  }
+
+  p {
+    code {
+      @apply font-semibold;
+      @apply bg-primary-200 text-neutral-950;
+      @apply px-2 py-0.5 rounded-sm;
+    }
   }
 
   pre {
@@ -94,7 +104,10 @@ html, body {
     @apply my-4;
     @apply rounded-md;
     @apply bg-neutral-900/50;
+  }
 
+  li.task-list-item {
+    @apply block;
   }
 
   li > p {
