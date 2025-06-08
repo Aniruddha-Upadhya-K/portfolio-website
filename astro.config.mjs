@@ -1,5 +1,5 @@
 // @ts-check
-import { defineConfig, fontProviders } from 'astro/config';
+import { defineConfig } from 'astro/config';
 
 import partytown from '@astrojs/partytown';
 import sitemap from '@astrojs/sitemap';
@@ -9,6 +9,12 @@ import robotsTxt from "astro-robots-txt";
 import icon from "astro-icon";
 
 import mdx from "@astrojs/mdx";
+import { 
+  transformerNotationDiff, 
+  transformerMetaHighlight,
+  transformerNotationHighlight
+} from '@shikijs/transformers';
+import rehypePrettyCode from "rehype-pretty-code";
 
 // https://astro.build/config
 export default defineConfig({
@@ -23,6 +29,22 @@ export default defineConfig({
       mdi: ["*"],
     }
   }), robotsTxt(), mdx()],
+
+  markdown: {
+    rehypePlugins: [ [rehypePrettyCode, {
+      grid: true,
+      theme: 'ayu-dark',
+      keepBackground: false,
+      bypassInlineCode: true,
+      defaultLang: "plaintext",
+      transformers: [
+        transformerNotationDiff(), 
+        transformerMetaHighlight(),
+        transformerNotationHighlight(),
+      ]
+    }] ],
+    syntaxHighlight: false,
+  },
 
   experimental: {
     fonts: [

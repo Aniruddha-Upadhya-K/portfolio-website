@@ -1,17 +1,23 @@
 ---
 import "../../styles/global.css"
 import { Icon } from 'astro-icon/components';
-import { contacts } from "../../data/home/contacts"
+import { contacts } from "../../data/home/contacts";
+import Badge from "../ui/Badge.astro";
 
 const links: string[] = ["about", "experiences", "education", "projects", "skills"];
 ---
 
 <nav class="flex flex-row justify-between items-center border-b border-b-neutral-500 fixed w-full max-w-7xl left-1/2 -translate-x-1/2 top-0 z-[999] md:px-10 px-6 py-4 text-subheading rounded-b-xl shadow-md shadow-neutral-900 md:backdrop-blur-md md:bg-transparent bg-neutral-950">
   <a class="text-white hover:text-primary-300 transition-colors duration-300" href="/">aniruddha</a>
-  <div class="md:flex hidden flex-row xl:gap-10 md:gap-6 ">
+  <div class="md:flex hidden flex-row items-center xl:gap-10 md:gap-6 ">
     {links.map(link => (
     <a href=`#${link}` aria-label={`Scroll to ${link} section`} class="text-link">{link}</a>
     ))}
+    <a href="/blogs">
+      <Badge type="default">
+        <span class="text-white">blogs</span>
+      </Badge>
+    </a>
   </div>
   <div class="md:hidden block h-full relative">
     <input type="checkbox" id="nav" class="absolute w-full h-full z-[90]">
@@ -30,6 +36,11 @@ const links: string[] = ["about", "experiences", "education", "projects", "skill
           {links.map(link => (
             <a href=`#${link}` aria-label={`Scroll to ${link} section`} class="hover:text-primary-300 transition-colors duration-300">{link}</a>
           ))}
+        <a href="/blogs">
+          <Badge type="default">
+            <span class="text-white">blogs</span>
+          </Badge>
+        </a>
         </div>
         <div class="flex flex-row flex-wrap gap-x-6 gap-y-4">
           {contacts.map(contact => {

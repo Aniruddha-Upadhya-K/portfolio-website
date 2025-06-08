@@ -3,6 +3,7 @@
 
 html, body {
   width: 100vw;
+  min-height: 100%;
   overflow-x: clip;
   background-color: var(--color-neutral-950);
   color: white;
