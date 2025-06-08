@@ -1,6 +1,6 @@
 ---
-import { getCollection } from 'astro:content';
 import '../styles/blog.css';
+import { getCollection } from 'astro:content';
 import BlogLayout from "../layouts/BlogLayout.astro"
 
 const blogs = await getCollection('blogs');
