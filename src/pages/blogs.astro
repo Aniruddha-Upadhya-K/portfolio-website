@@ -1,18 +1,37 @@
 ---
-import '../styles/blog.css';
+import '../styles/global.css';
 import { getCollection } from 'astro:content';
 import BlogLayout from "../layouts/BlogLayout.astro"
+import ProjDisplay from '../components/home/projects/ProjDisplay.astro';
+import type { Project, Tech } from '../data/home/type';
 
 const blogs = await getCollection('blogs');
+
+const blogList: Project[] = blogs.map(b => {
+  const techs: Tech[] = b.data.tags.map(tag => ({
+    name: tag,
+    type: "sub",
+  }))
+
+  const blog: Project = {
+    name: b.data.title,
+    desc: b.data.desc,
+    date: b.data.date,
+    url: {
+      readMore: `/blog/${b.id}`,
+    },
+    techs: techs,
+  }
+
+  return blog;
+})
 ---
 
 <BlogLayout title="blogs | aniruddha" desc="list of all the blogs i wrote">
-  <h1>my blogs</h1>
+  <h1 class="text-heading mt-16 mb-10">my blogs</h1>
   <ul>
-    {blogs.map(blog => (
-      <a href={`/blog/${blog.id}`}>
-        <li class="text-subheading">{blog.data.title}</li>
-      </a>
+    {blogList.map(blog => (
+      <ProjDisplay project={blog} />
     ))}
   </ul>
 </BlogLayout>

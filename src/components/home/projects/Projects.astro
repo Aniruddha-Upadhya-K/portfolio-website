@@ -1,11 +1,21 @@
 ---
 import '../../../styles/global.css';
+import { getCollection } from 'astro:content';
 import ProjDisplay from './ProjDisplay.astro';
 import { projects } from '../../../data/home/projects';
 import { Icon } from 'astro-icon/components';
 
 const initialProj = projects.slice(0, 3); 
 const finalProj = projects.slice(3);
+
+const projDet = await getCollection('projects');
+projDet.map(proj => {
+  projects.forEach(project => {
+    if (project.name === proj.data.title) {
+      project.url.readMore = `/project/${proj.id}`
+    }
+  })
+})
 ---
 
 <div id="projects" class="md:pd-16 pd-8 flex flex-col md:gap-8 gap-4 md:scroll-mt-24 scroll-mt-18">

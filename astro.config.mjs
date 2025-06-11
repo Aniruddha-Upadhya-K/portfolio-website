@@ -101,6 +101,11 @@ export default defineConfig({
             src: ["./src/assets/Overpass/Overpass-Italic.woff2"]
           },
           {
+            weight: 500,
+            style: "normal",
+            src: ["./src/assets/Overpass/Overpass-Medium.woff2"]
+          }, 
+          {
             weight: 700,
             style: "normal",
             src: ["./src/assets/Overpass/Overpass-Bold.woff2"]

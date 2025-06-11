@@ -8,6 +8,8 @@ html, body {
   color: white;
   scroll-behavior: smooth;
   font-family: var(--font-sans);
+  overflow-x: clip;
+  text-transform: lowercase;
 }
 
 @theme {
@@ -22,36 +24,37 @@ html, body {
 }
 
 @layer components {
-  h1 {
+  h1, .text-h1 {
     @apply lg:text-4xl/10 md:text-3xl/9 text-2xl/7;
     @apply text-primary-200;
     @apply font-bold text-left;
     @apply w-fit;
-    @apply my-10;
+    @apply mt-16 mb-10;
     border-bottom-width: 3px;
     border-bottom-style: solid;
     border-image: linear-gradient(to right, var(--color-primary-400), var(--color-primary-300));
     border-image-slice: 1;
   }
 
-  h2 {
+  h2, .text-h2 {
     @apply lg:text-4xl md:text-3xl text-2xl;
     @apply font-bold text-left; 
-    @apply my-4;
+    @apply mt-10 mb-4;
   }
 
-  h3 {
+  h3, .text-h3 {
     @apply lg:text-3xl md:text-2xl text-xl;
     @apply font-semibold;
-    @apply my-3;
+    @apply mt-7 mb-3;
   }
 
-  h4 {
+  h4, .text-h4 {
     @apply lg:text-2xl md:text-xl text-xl;
-    @apply my-2;
+    @apply font-medium;
+    @apply mt-5 mb-2;
   }
 
-  h5 {
+  h5, .text-h5 {
     @apply lg:text-xl md:text-lg text-base;
     @apply font-semibold italic;
     @apply my-1;
@@ -63,10 +66,9 @@ html, body {
     @apply my-2;
   }
 
-  .text-caption {
-    @apply lg:text-lg md:text-base text-sm;
+  figcaption, .text-caption {
+    @apply lg:text-lg md:text-base text-base;
     @apply tracking-widest;
-    @apply italic text-left;
   }
 
   .text-subcaption {
@@ -100,6 +102,9 @@ html, body {
   }
 
   p {
+    @apply my-4;
+    @apply leading-8;
+
     code {
       @apply font-semibold;
       @apply bg-primary-300 text-neutral-950;
@@ -130,6 +135,19 @@ html, body {
       @apply my-0;
       @apply rounded-b-md rounded-t-none;
       @apply border-0 border-t border-t-neutral-900;
+    }
+  }
+
+  figure.video-container {
+    @apply md:my-8 my-4;
+    
+    figcaption.video-caption {
+      @apply md:py-4 py-2 px-4;
+      @apply text-center;
+    }
+
+    video {
+      @apply rounded-md;
     }
   }
 
@@ -187,10 +205,12 @@ html, body {
 
     > .diff.add[data-line]::after {
       content: '+';
+      @apply text-code-add;
     }
 
     > .diff.remove[data-line]::after {
       content: '-';
+      @apply text-code-remove;
     }
   } 
    
