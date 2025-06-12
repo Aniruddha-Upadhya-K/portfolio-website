@@ -20,7 +20,8 @@ const projects = defineCollection({
     github: z.string().optional(),
     website: z.string().optional(),
     doc: z.string().optional(),
-    team: z.union([z.enum(["solo"]), z.array(z.string())])
+    team: z.union([z.enum(["solo"]), z.array(z.string())]),
+    mentors: z.array(z.string()).optional(),
   })
 });
 
