@@ -83,6 +83,16 @@ html, body {
     transition: color ease 0.3s;
   }
 
+  strong {
+    @apply font-black;
+    @apply text-primary-200;
+  }
+
+  em {
+    @apply font-bold;
+    @apply text-primary-100;
+  }
+
   blockquote {
     @apply p-4;
     @apply my-4;
@@ -138,16 +148,16 @@ html, body {
     }
   }
 
-  figure.video-container {
+  figure.video-container, figure.image-container {
     @apply md:my-8 my-4;
     
-    figcaption.video-caption {
+    figcaption.video-caption, figcaption.image-caption {
       @apply md:py-4 py-2 px-4;
       @apply text-center;
     }
 
-    video {
-      @apply rounded-md;
+    video, img {
+      @apply md:rounded-xl rounded-lg;
     }
   }
 

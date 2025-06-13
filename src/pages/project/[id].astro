@@ -53,7 +53,7 @@ const { Content } = await render(blog);
           console.log(arr);
           const link = arr[0];
           const name = arr.at(-1);
-          return (<a href={`https://${link}`} class="text-link min-w-max text-h5">
+          return (<a href={link} class="text-link min-w-max text-h5">
             {name}
           </a>)
         }

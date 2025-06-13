@@ -6,12 +6,12 @@ tags:
 desc: a comprehensive system for precise 3D localization of breast tumors, combining CC and MLO mammogram views to enhance diagnostic accuracy
 doc: /doc/patent_mammogram_analysis_202541004479
 team:
-- github.com/Ash1sh0611|Ashish Shankar
-- Ashwin Raj K R
-- Amarendra Kumar Singh
+- github.com/Ash1sh0611|Ashish-Shankar
+- Ashwin-Raj-K-R
+- Amarendra-Kumar-Singh
 mentors: 
-- Dr. Vidya Kudva
-- Shankari N.
+- Dr.Vidya-Kudva
+- Shankari-N
 ---
 
 ## Background
@@ -22,7 +22,7 @@ The project was aimed to explore ways of automating or assisting this localizati
 
 ## Things I Learned
 
-First off, this was my first real AI related project. Yes, I'd played around with the basics - linear/logistic regression, KNN, Neural Networks the usual textbook stuffs - but this was the first time I had to actually build something that could be used in a real-world medical scenario. I was, and still am a beginner to the world of `Python` and its libraries. Coming from mostly a web development background, this was a whole different beast to tackle. It took me quite a few days to even think of an approach, that too with lots and lots of binge watching youtube tutorials.
+First off, this was my first real AI related project. Yes, I'd played around with the basics - linear/logistic regression, KNN, Neural Networks the usual textbook stuffs - but this was the first time I had to actually build something that could be used in a real-world medical scenario. I was, and still am a beginner to the world of _Python_ and its libraries. Coming from mostly a web development background, this was a whole different beast to tackle. It took me quite a few days to even think of an approach, that too with lots and lots of binge watching youtube tutorials.
 
 #### Fun and Quickly Boring: The Annotation Work
 
@@ -30,7 +30,7 @@ As for any AI related projects, data is the fuel, and turns out getting that dat
 
 #### And Finally, Python... Again
 
-Just like any other AI project, Python is like the first and mostly the only language used. It's not just about the easy or told so (not for me personally)  syntax, but it’s about thinking in terms of data transformations, vectorized operations etc. The latter point makes more sense, as you wouldn't want to keep implementing your own set of string/data manupilation techniques in C/C++ or so languages. Libraries like `Numpy`, `Pandas`, `Matplotlib`, `Scikit learn` etc. became my new toolbox. But well I guess I will never going to get fully comfortable with those.
+Just like any other AI project, Python is like the first and mostly the only language used. It's not just about the easy or told so (not for me personally)  syntax, but it’s about thinking in terms of data transformations, vectorized operations etc. The latter point makes more sense, as you wouldn't want to keep implementing your own set of string/data manupilation techniques in _C/C++_ or so languages. Libraries like _Numpy_, _Pandas_, _CV2_, _Matplotlib_, _Scikit learn_ etc. became my new toolbox. But well I guess I will never going to get fully comfortable with those.
 
 ## Why Does It Matter
 
