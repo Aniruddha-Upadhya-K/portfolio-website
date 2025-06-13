@@ -4,7 +4,7 @@ tags:
 - Machine Learning
 - Healthcare
 desc: a comprehensive system for precise 3D localization of breast tumors, combining CC and MLO mammogram views to enhance diagnostic accuracy
-doc: /doc/patent_mammogram_analysis_202541004479
+doc: /doc/patent_mammogram_analysis_202541004479.pdf
 team:
 - github.com/Ash1sh0611|Ashish-Shankar
 - Ashwin-Raj-K-R
