@@ -5,7 +5,7 @@ import { Icon } from 'astro-icon/components';
 ---
 
 <div class="w-full h-[100vh] flex items-center sticky top-0 z-0">
-  <div class="w-full flex flex-col px-2 md:gap-8 gap-4">
+  <div class="w-full flex flex-col px-2 gap-4">
     <div class="w-full md:whitespace-nowrap text-outline text-huge tracking-widest text-center">hello there,</div>
     <div class="w-full flex md:flex-row flex-col justify-center items-center xl:gap-12 md:gap-8 gap-4">
       <div class="text-neutral-400/75 text-vertical text-center text-shadow-xl">it's me,</div>
@@ -56,7 +56,7 @@ import { Icon } from 'astro-icon/components';
   }
 
   .text-huge {
-    @apply xl:text-[9rem] md:text-9xl sm:text-7xl text-5xl;
+    @apply xl:text-[9rem]/32 md:text-9xl sm:text-7xl text-5xl;
     @apply font-extrabold;
     @apply lg:tracking-wide tracking-normal;
   }

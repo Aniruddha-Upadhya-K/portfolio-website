@@ -94,7 +94,7 @@ html, body {
   }
 
   blockquote {
-    @apply p-4;
+    @apply px-4 py-1;
     @apply my-4;
     @apply bg-neutral-900/50;
     @apply rounded-md;
