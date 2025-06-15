@@ -50,7 +50,6 @@ const { Content } = await render(blog);
         {blog.data.team.map((team) => {
         if (team.includes("github")) {
           const arr = team.split('|');
-          console.log(arr);
           const link = arr[0];
           const name = arr.at(-1);
           return (<a href={link} class="text-link min-w-max text-h5">

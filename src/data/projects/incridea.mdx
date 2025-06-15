@@ -15,10 +15,12 @@ team:
     - https://github.com/nandanpi|Nandan-R-Pai
     - https://github.com/satwikrprabhu|Satwik-R-Prabhu
     - https://github.com/Athena-2003|Shashank-B-N
-    - And more ↓
+    - https://github.com/incridea-nmamit/incridea-client/tree/2024|And more ↓
 ---
 
 import { Image } from 'astro:assets';
+import Carousel from "../../components/blog/BlogMediaCarousel.astro"
+import contents from "./carouselMedia/incridea.ts";
 
 ## Background
 
@@ -30,41 +32,9 @@ So yeah, the challenge was real: design wireframes, search for 3D assets, come u
 
 And somehow, we pulled it off. No, it didn’t make into the top "coolest websites of the year" list, but it absolutely exceeded our own expectations. And considering the tight deadlines and the amount of learning involved, that’s a sure win as far as I'm concerned. And here is a glimpse of that...
 
-<figure class="image-container">
-  <Image src="/projects/incridea/landing.webp" alt="Landing Page" height="768" width="1366" widths={[240, 540, 720, 1136]} sizes="sizes={`(max-width: 360px) 240px, (max-width: 720px) 540px, 1136px" />
-  <figcaption class="image-caption text-caption">Landing Page</figcaption>
-</figure>
+<Carousel 
+  uid="incridea" 
+  contents={contents}
+/>
 
-<figure class="video-container">
-  <video controls preload="metadata" aria-label="Explore - Level 1">
-    <source src="/projects/incridea/explore-1.mp4"/>
-  </video>
-  <figcaption class="video-caption text-caption">Explore - Level 1</figcaption>
-</figure>
-
-<figure class="video-container">
-  <video controls preload="metadata" aria-label="Explore - Level 2">
-    <source src="/projects/incridea/explore-2.mp4"/>
-  </video>
-  <figcaption class="video-caption text-caption">Explore - Level 2</figcaption>
-</figure>
-
-<figure class="video-container">
-  <video controls preload="metadata" aria-label="Explore - Level 3">
-    <source src="/projects/incridea/explore-3.mp4"/>
-  </video>
-  <figcaption class="video-caption text-caption">Explore - Level 3</figcaption>
-</figure>
-
-<figure class="image-container">
-  <Image src="/projects/incridea/gallery.webp" alt="Gallery Page" height="900" width="1600" widths={[240, 540, 720, 1136]} sizes="sizes={`(max-width: 360px) 240px, (max-width: 720px) 540px, 1136px" />
-  <figcaption class="image-caption text-caption">Gallery Page</figcaption>
-</figure>
-
-<figure class="video-container">
-  <video controls preload="metadata" aria-label="Pronite Page">
-    <source src="/projects/incridea/pronite.mp4"/>
-  </video>
-  <figcaption class="video-caption text-caption">Pronite Page</figcaption>
-</figure>
 
