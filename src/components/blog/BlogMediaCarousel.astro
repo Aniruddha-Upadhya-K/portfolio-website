@@ -23,14 +23,14 @@ const { contents, uid } = Astro.props as Props;
 ---
 
 <section class="flex flex-col items-center my-8 bg-neutral-900/50 pt-4 rounded-lg">
-  <div class="flex flex-row md:gap-4 gap-2 flex-wrap">
+  <div class="flex flex-row md:gap-4 gap-2 flex-wrap relative z-10">
     {contents.map((_, idx) => (
     <a class="text-white font-mono" href={`#${uid}-${idx}`}>
       <Badge type="default">{idx+1}</Badge>
     </a>
     ))}
   </div>
-  <div class="-mt-2 scrollbar-hide scroll-smooth flex flex-row w-full overflow-x-auto items-stretch snap-mandatory snap-x">
+  <div class="md:-mt-18 -mt-50 md:pt-16 pt-48 scrollbar-hide scroll-smooth flex flex-row w-full overflow-x-auto items-stretch snap-mandatory snap-x">
     {contents.map((content, idx) => {
       if (content.type === "video") {
         return (
