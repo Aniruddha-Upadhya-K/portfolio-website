@@ -22,7 +22,7 @@ type Props = {
 const { contents, uid } = Astro.props as Props;
 ---
 
-<section class="flex flex-col items-center my-8 bg-neutral-900/50 pt-4 rounded-lg">
+<section class="flex flex-col items-center my-8 bg-neutral-900/50 pt-4 rounded-xl">
   <div class="flex flex-row md:gap-4 gap-2 flex-wrap relative z-10">
     {contents.map((_, idx) => (
     <a class="text-white font-mono" href={`#${uid}-${idx}`}>

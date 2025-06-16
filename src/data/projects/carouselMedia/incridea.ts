@@ -1,9 +1,9 @@
 const contents = [
   {
     type: 'image', 
-    src:"/projects/incridea/landing.webp", 
-    height:768, 
-    width:1366, 
+    src: "/projects/incridea/landing.webp", 
+    height: 768, 
+    width: 1366, 
     widths: [240, 540, 720, 1136], 
     sizes: "(max-width: 360px) 240px, (max-width: 720px) 540px, (max-width: 1024px) 720px, 1136px",
     caption: "Landing Page",
@@ -25,9 +25,9 @@ const contents = [
   },
   {
     type: 'image', 
-    src:"/projects/incridea/gallery.webp", 
-    height:900, 
-    width:1600, 
+    src: "/projects/incridea/gallery.webp", 
+    height: 900, 
+    width: 1600, 
     widths: [240, 540, 720, 1136], 
     sizes: "(max-width: 360px) 240px, (max-width: 720px) 540px, (max-width: 1024px) 720px, 1136px",
     caption: "Gallery Page",
