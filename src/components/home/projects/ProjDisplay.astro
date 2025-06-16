@@ -28,17 +28,21 @@ const { project } = Astro.props as Prop;
     </div>
   </div>
   <div class="flex flex-row gap-4 items-center">
-    {project.url.patent && <a target="_blank" class="flex flex-row items-center md:gap-2 gap-1" href={project.url.patent}>
+    {project.url.patent && <a target="_blank" class="flex flex-row items-center md:gap-2 gap-1 text-link" href={project.url.patent}>
       <span class="mt-[3px]">patent</span>
       <Icon name="line-md:file-document"/>
     </a>}
-    {project.url.github && <a target="_blank" class="flex flex-row items-center md:gap-2 gap-1" href={project.url.github}>
+    {project.url.github && <a target="_blank" class="flex flex-row items-center md:gap-2 gap-1 text-link" href={project.url.github}>
       <span class="mt-[3px]">github</span>
       <Icon name="mdi:github"/>
     </a>}
-    {project.url.website && <a target="_blank" class="flex flex-row items-center md:gap-2 gap-1" href={project.url.website}>
+    {project.url.website && <a target="_blank" class="flex flex-row items-center md:gap-2 gap-1 text-link" href={project.url.website}>
       <span class="mt-[3px]">website</span>
       <Icon name="mdi:external-link"/>
+    </a>}
+    {project.url.readMore && <a class="flex flex-row items-center md:gap-2 gap-1 text-link" href={project.url.readMore}>
+      <span class="mt-[3px]">read more</span>
+      <Icon name="line-md:arrow-up" class="rotate-90 scale-y-120 scale-x-90" />
     </a>}
   </div>
 </div>

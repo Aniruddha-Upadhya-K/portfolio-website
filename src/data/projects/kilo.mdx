@@ -1,0 +1,58 @@
+---
+title: Kilo Text Editor
+tags: 
+- text editor
+- low level
+desc: a simple nano-like text editor in C
+github: https://github.com/aniruddha-upadhya-k/kilo
+team: solo
+---
+
+## Background
+
+Started this journey to get used to C ecosystem, as before this I had no real exposure to C other than little bit of DSA (which for most part I actually did in _C++_ tbh) during my college days. Hence with zero idea how to build anything real in this fundamental language (I say that, as almost any system critical program is built in it, except for few built in the now way cooler language, _Rust_). So I got into this project by referring this awesome book, [Kilo Text Editor](https://viewsourcecode.org/snaptoken/kilo/) by **Paige**. 
+
+Along the way, as I understood more and more about the project structure, I started my own small ventures, like making cursor navigation feel like how it should, trying to be smarter and make navigation more efficient only to find my way back to what it was in the tutorial, finally realising why they did that way. Those smaller ventures then let me do almsot everything afterwards on my own, starting from implementing **ENTER** key, inserting texts, making everything memory safe, deleting text with **BACKSPACE** and **DELETE** (not gonna, lie that was really hard to get right, all because I forgot to add 1 in a key area), and many more to finally now on doing **UNDO-REDO** feature.
+
+Starting the project, I had the impression: how complex can the text editor be? but I knew atleast some part of it will be difficult, as in one of video Primeagen mentioned, do a text editor once in your life, then you will understand how hard the state management of the cursor will be. Since that day I have been thinking about the cursor movement across different text editors, notably _MS Word_, _Notepad_, _Nano_, _Vim_ (yeah here, the cursor just disappears and spawns completely elsewhere, but I'm only talking of cursor in insert mode). So that's one more reason why I chose to do text editor specifically.
+
+<figure class="video-container">
+  <video controls muted preload="metadata" aria-label="Kilo Demo">
+    <source src="/projects/kilo/kilo.mp4"/>
+  </video>
+  <figcaption class="video-caption text-caption">Kilo Demo</figcaption>
+</figure>
+
+## Things I Learned
+
+#### It's a game, fr
+
+I had the impression of, "well, just take all the keypresses, store it in an array or something, and same you print to the screen... thats it right? Then its just cursor, most likely the hardest part...". Well, I can only say I just got a reality check. Had that book I mentioned earlier wasn't there, I would have never guessed that text editor is like a freaking Game.
+
+Yes, a Game! How you ask? After setting up the initial part (nothing more than setting terminal to raw mode from canonical mode, but impossible without that book) the first thing I noticed was frames... Everything is rendered in sort of frames, each keypress triggers a rerender, thats exactly how games typically works (I mention games, cuz I have made 2 small games earlier), and only games would do that, or so I used to believe. Yes I know that the screen itself is blinking every 1/60th second or so (for 60Hz screen), but I didn't realize almost everything that includes some sort of GUI needs to do that.
+
+#### Cursor Navigation: Easy until it wasn't
+
+And then came the cursor navigation. To be honest, it was easy, so easy that it was just one more variable to store the max x-position the cursor has travelled, before a key that causes cursor to readjust like BACKSPACE, HOME is pressed or going to new line by pressing RIGHT at the end of a line, which will just modify the variable to the current cursor position value. Putting it in words is actually harder than actually implementing it is what I truly felt. Thinking what's wrong with Primeagen? Seriously this is what he called as hard?
+
+All this only to come across TAB (The real villian of all). It single handedly made everything I did till now complicated, and made me realize what Prime meant. State management was hell. I had to take a step back to really think about what's going on and write it all down, to get an idea of how to solve it. This making of cursor navigation similar to that of Nano is when I started to do things on my own, stopping referring to the book for every line.
+
+One thing the book completely ignored was memory safety. So much of memory was leaking, and it is at this stage I came across Valgrind, a tool used to check for memory leaks in C application, for the first time and got to know so much of memory is never freed. Hence started new quest to make it memory safe, and implementing anything and everything further with it in mind. 
+
+#### Bugs, Debuggers and the Pain
+
+Later on, some of the big features I added on my own included scroll offset, ENTER, BACKSPACE, and DELETE key functionalities, along with file saving and save-as features. Out of all these, implementing the DELETE functionality gave me the most trouble. There was this weird bug that I couldn’t track down for days—I'd press random keys in random order, mix in BACKSPACE and DELETE, and boom, I’d randomly get a `core dumped` error. No idea why. No idea from where.
+
+I tried using GDB for the first time (never touched a debugger before), and honestly, I spent almost a week just stuck, totally clueless. Then on the 8th night—pure luck—I managed to trigger the bug while GDB was running. And guess what? The issue came down to a missing **+1** in a `realloc` and `memcpy` call. That tiny little number caused a week of debugging hell. It was such an ironic moment - something so small causing so much chaos. The pain was real. But honestly, that week taught me more about GDB and Valgrind than any tutorial ever could.
+
+Now I’m almost done building the UNDO/REDO functionality. That part made me learn the Command Pattern, and while implementing it in a separate module, I finally got the hang of how header files work and how to organize and build everything properly using a `Makefile`.
+
+## Why Does It All Matter?
+
+Before this, I was mostly into web development - especially making cool frontend using stuffs like Three JS, and making website interactive, with slik animation, or even throwin some mini games here and there. But all along I was constantly feeling "is this all to it?". I was always curious about how everything's built. Things I have taken for granted. And recently getting started with _Neovim_ just changed the way I code. I was always wondering how complicated it should be to build something like that. Now, I’m not saying I built anything even close to the legendary Vim or _Neovim_. But working on this project really made me appreciate it so much. Everytime I see options like 
+
+```vim
+:set shiftwidth=4 tabstop=4
+```
+I realize just how much thought and complexity goes into even the smallest features.
+

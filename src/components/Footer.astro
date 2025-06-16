@@ -1,5 +1,5 @@
 ---
-import '../styles/global.css';
+import '../styles/theme.css';
 import { Icon } from 'astro-icon/components';
 import { contacts } from '../data/home/contacts';
 ---
@@ -9,9 +9,9 @@ import { contacts } from '../data/home/contacts';
   <p class="flex flex-row gap-2 justify-center items-center">Made with <Icon name="line-md:heart-filled" /> by Aniruddha Upadhya K</p>
   <div class="flex flex-row gap-3">
     {contacts.map(contact => {
-    return contact.name == "mail" ? (<a href={`mailto:${contact.url}`} class="text-link text-2xl">
+    return contact.name == "mail" ? (<a href={`mailto:${contact.url}`} class="text-link text-2xl text-white hover:text-primary-300">
       <Icon name="mdi:email" />
-    </a>) : (<a href={contact.url} class="text-link" target="_blank">
+    </a>) : (<a href={contact.url} class="text-link text-white hover:text-primary-300" target="_blank">
       {contact.name == 'linkedin' && <Icon class="text-2xl" name="mdi:linkedin" />}
       {contact.name == 'twitter' && <Icon class="text-2xl" name="mdi:twitter" />}
       {contact.name == 'github' && <Icon class="text-2xl" name="mdi:github" />}

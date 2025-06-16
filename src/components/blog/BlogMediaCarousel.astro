@@ -1,0 +1,82 @@
+---
+import '../../styles/blog.css';
+import { Image } from 'astro:assets';
+import Badge from '../ui/Badge.astro';
+
+type CarouselContent = {
+  type: 'image' | 'video',
+  src: string,
+  alt?: string,
+  caption: string,
+  widths?: number[],
+  sizes?: string,
+  width?: number,
+  height?: number,
+};
+
+type Props = {
+  contents: CarouselContent[],
+  uid: string,
+};
+
+const { contents, uid } = Astro.props as Props;
+---
+
+<section class="flex flex-col items-center my-8 bg-neutral-900/50 pt-4 rounded-xl">
+  <div class="flex flex-row md:gap-4 gap-2 flex-wrap relative z-10">
+    {contents.map((_, idx) => (
+    <a class="text-white font-mono" href={`#${uid}-${idx}`}>
+      <Badge type="default">{idx+1}</Badge>
+    </a>
+    ))}
+  </div>
+  <div class="md:-mt-18 -mt-50 md:pt-16 pt-48 scrollbar-hide scroll-smooth flex flex-row w-full overflow-x-auto items-stretch snap-mandatory snap-x">
+    {contents.map((content, idx) => {
+      if (content.type === "video") {
+        return (
+          <figure id={`${uid}-${idx}`} class="h-full video-container w-full flex-shrink-0 snap-start md:px-4 px-2 md:scroll-mt-36 scroll-mt-48 mb-0">
+            <video controls 
+              preload="metadata" 
+              aria-label={content.alt ? content.alt : content.caption}
+              class="border-1 border-neutral-900"
+              >
+                <source src={content.src}/>
+            </video>
+            <figcaption class="video-caption text-caption">{content.caption}</figcaption>
+          </figure>
+        )
+      } else if (content.height && content.width) {
+        return (
+          <figure id={`${uid}-${idx}`} class="image-container w-full flex-shrink-0 snap-start md:px-4 px-2 md:scroll-mt-36 scroll-mt-48 mb-0">
+            <Image 
+              src={content.src} 
+              alt={content.alt ? content.alt : content.caption} 
+              height={content.height}
+              width={content.width}
+              widths={content.widths}
+              sizes={content.sizes}
+            />
+            <figcaption class="image-caption text-caption">{content.caption}</figcaption>
+          </figure>
+        )
+      }
+    })}
+  </div>
+</section>
+
+<style>
+  @reference 'tailwindcss';
+
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+
+  img {
+    @apply border-1 border-neutral-900;
+  }
+</style>

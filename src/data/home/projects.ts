@@ -51,7 +51,7 @@ export const projects: Project[] = [
       "The current live site uses a new frontend; my contributions remain in the maintained codebase",
     date: "Jan 2024",
     url: {
-      github: "https://github.com/incridea-nmamit/incridea-client",
+      github: "https://github.com/incridea-nmamit/incridea-client/tree/2024",
     },
     techs: [
       { name: "Next.js", type: "main" },

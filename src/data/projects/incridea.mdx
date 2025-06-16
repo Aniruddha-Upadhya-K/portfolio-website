@@ -1,0 +1,69 @@
+---
+title: Incridea Website
+desc: Website for Incridea'24 (college fest), featuring 3D animations, character animations and many more
+tags: 
+    - Gamification
+    - 3d
+    - Full-stack
+github: https://github.com/incridea-nmamit/incridea-client/tree/2024
+team: 
+    - https://github.com/swasthikshetty10|Swasthik-Shetty
+    - https://github.com/nagarajpandith|Nagaraj-Pandith
+    - https://github.com/keerthan-ns|Keerthan-N-S
+    - https://github.com/SrivatsaRUpadhya|Srivatsa-R-Upadhya
+    - https://github.com/Prabhuomkar9|Omkar-G-Prabhu
+    - https://github.com/nandanpi|Nandan-R-Pai
+    - https://github.com/satwikrprabhu|Satwik-R-Prabhu
+    - https://github.com/Athena-2003|Shashank-B-N
+    - https://github.com/incridea-nmamit/incridea-client/tree/2024|And more ↓
+---
+
+import { Image } from 'astro:assets';
+import Carousel from "../../components/blog/BlogMediaCarousel.astro";
+import contents from "./carouselMedia/incridea.ts";
+
+## Background
+
+Incridea is a National level techno-cultural fest, hosted by NMAM Institute of Technology (that's the college I studied in). There's been a legacy of making cool frontend for the event for quite a few years, which was continued post covid. By 2023, even the judging process and almost the entire backend of the event were fully migrated to the website, making the whole event paperless.. Looking those cool UI's, I was inspired to join the tech team behind it. And sure enough, I became a part of the team in 2024. This write-up is all about that year's site.
+
+Our ambitions? Huge. We wanted to take things to the next level - 
+
+1. Make the site 3D
+2. Narrative structure
+3. Mini-games here and there
+4. Overall, turning the site into an experience
+
+So yeah, the challenge was real: design wireframes, search for 3D assets, come up with animations, throw in a story, maybe even sneak in a mini-game or two - all while staying true to the theme. It was hectic, chaotic, and honestly overwhelming at times-but also incredibly fun and rewarding in its own way.
+
+And somehow, we pulled it off. No, it didn’t make into the top "coolest websites of the year" list, but it absolutely exceeded our own expectations. And considering the tight deadlines and the amount of learning involved, that’s a sure win as far as I'm concerned. And here is a glimpse of that...
+
+<Carousel 
+  uid="incridea" 
+  contents={contents}
+/>
+
+## Things I Learned
+
+#### Game Dev is sure not easy!
+
+In those 15 days of time that we had, the [platformer mini-game](#incridea-1) itself took more than half the time. The collission detection, and the state management, cuz that too on React js, woah that is exaclt like
+
+> When all you have is a hammer, everything looks like a nail
+
+issue. Even if react is never meant to handle something like a game, specifically not the one running in a `HTML Canvas`, we had no choice but to make it work. Some how with all the crappy spaghetti code we could come up with, we somehow made it work, barely. [Kausthubh](https://kausthubh.com) (one of the team member) then had to integrate sounds for it, god knows how he managed to pull that off, black magic, probably.
+
+The other major issue was, the web, which can be viewed in almost all sorts of devices, from smart watches to smart fridges, from ancient 30Hz devices to gaming beasts pushing 165Hz. To make the canvas fit for all, and maintaining relatively constant sizes, distances, speed... all I can say is I did not have many good nights of sleep.. 
+
+#### The real beast of 3D...
+
+You think getting real 3D scene running is hard? Well try getting the assets for it. With a week left on the clock, and no idea how many sections to do, and even worse, not even sure of what to do. We just had a rough storyline. It was all having just a flash light in a grim of night. Finally, we found some usable assets, and a game changing 
+<a href="https://tympanus.net/codrops/2023/02/14/animate-a-camera-fly-through-on-scroll-using-theatre-js-and-react-three-fiber/" target="_blank">tutorial</a>,
+which made life a whole lot easier.
+
+I finished the [last scene](#incridea-5) literally on the day of the launch. That was way too close not gonna lie.
+
+## Why Does It All Matter?
+
+Well that whole fest prep was a roller coaster ride. From learning so much in so little time, whilst also building something real, something that ended up beeing seen by atleast **10k** people. That is surely not an everyday event. And it wasn’t just our college students. People from other colleges, folks participating in the event, they all had high expectations, something that was carried on from previous year's success. The website was a **first impression**, and in many ways, the face of the entire fest.
+
+Sure, it wasn’t perfect. There were rough edges, lots that could’ve been better. But despite all that - it turned out really well. We pulled it off. And for a team just figuring things out on the fly? That’s something to be proud of.

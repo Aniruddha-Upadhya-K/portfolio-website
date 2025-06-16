@@ -10,6 +10,7 @@ export type ProjectUrl = {
   website?: string;
   doc?: string;
   patent?: string;
+  readMore?: string;
 }
 
 export type Project = {
