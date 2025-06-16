@@ -52,7 +52,7 @@ const { Content } = await render(blog);
           const arr = team.split('|');
           const link = arr[0];
           const name = arr.at(-1);
-          return (<a href={link} class="text-link min-w-max text-h5">
+          return (<a target="_blank" href={link} class="text-link min-w-max text-h5">
             {name}
           </a>)
         }
