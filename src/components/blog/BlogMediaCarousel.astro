@@ -38,7 +38,7 @@ const { contents, uid } = Astro.props as Props;
             <video controls 
               preload="metadata" 
               aria-label={content.alt ? content.alt : content.caption}
-              class="border-1 border-neutral-900"
+              class="border-1 border-neutral-900 object-contain object-center max-h-128"
               >
                 <source src={content.src}/>
             </video>
@@ -55,6 +55,7 @@ const { contents, uid } = Astro.props as Props;
               width={content.width}
               widths={content.widths}
               sizes={content.sizes}
+              class="object-contain object-center max-h-128"
             />
             <figcaption class="image-caption text-caption">{content.caption}</figcaption>
           </figure>

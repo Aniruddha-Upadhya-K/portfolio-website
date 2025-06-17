@@ -1,0 +1,88 @@
+---
+title: Eternals
+desc: 3d infinite runner game inspired by Temple Run but in an unknown planet
+tags:
+  - Game dev
+  - 3D
+  - Endless Runner
+github: https://github.com/aniruddha-upadhya-k/etarnals
+team:
+  - https://github.com/HrishikeshMRao|Hrishikesh-M-Rao
+---
+
+import { Image } from 'astro:assets';
+import Carousel from "../../components/blog/BlogMediaCarousel.astro";
+import contents from "./carouselMedia/eternals.ts";
+
+## Background
+
+This was the time when I was really really bored of doing of a lot of JS. I wanted some breathing space. To do/learn something else. Now, I'm not a hardcore gamer, but I have played a quite few of them. Growing up, I always liked physics and maths, and hence Game dev sounded like a good way to regain my lost interest. But meanwhile I also knew gamedev is one of the hardest industry out there. But I still wanted to give it a try and understand some of it. 
+
+Of course, I wasn’t entirely on my own here. I wasn’t always that sensible or focused, so I needed a bit of a push. A good friend of mine,
+<a href="https://github.com/HrishikeshMRao" target="_blank">Hrishikesh</a>
+had to convince me to stop overthinking and just build something. No excuses. No perfect idea needed. Just get started.
+
+I followed this 
+<a href="https://learn.unity.com/pathway/junior-programmer/unit/basic-gameplay/tutorial/6759d4deedbc2a19d88974c3?version=6.0" target="_blank">unity tutorial</a>
+and made my first game in it. Immediately after I was done with that tutorial, we jumped straight into our first real project together. We were ambitious, but for the drafts the game should be playable, to make something similar to temple run or subway surfers and built from scratch.
+
+<Carousel 
+  uid="eternals" 
+  contents={contents}
+/>
+
+## Things I Learned
+
+#### Unity, C#, and Game Logics
+
+Both Unity Game Engine, as well as C# were completely new to me. Learning basics of it took about a week or two. But the harder thing is writing game logic, and maintaining game loop. There are several things in this game like, 
+
+- Procedurally rendering platforms as player crosses one since we can not have infinite amount of platform rendered.
+
+- Procedurally spawning obstacles... 
+
+    - my initial idea was to have 4 kinds of blocks, each spanning one unit of width.
+
+        1. Small block on ground: To dodge, the player either have to go around it, or jump over it
+
+        2. Small block on air: To dodge player has to either go around, or slide
+
+        3. Huge block: Only way to dodge is to move around
+
+        4. Empty block: Fancy way of saying no blocks at all
+    
+        An obstacle is made by putting different kinds of blocks to cover entire width, and it should consist atleast one of the dodgable blocks
+
+    - Each obstacle is placed after certain distance which is derived from players current score.
+
+    - Sounds great, but my friend was not satisfied, so he made everything random. From having the predefined set of obstacles, and to have random varient of block placed, at random position, removing the whole factor of score based distancing.
+
+    - Basically the game became unplayable...
+
+- Added coins, which spawns only in the reachable areas.
+
+- Keeping track of highscores, in a seperate file, technically it should be made such that the file should not be accessible, or should not be in human readable format.
+
+- Having little physics, like gravity, velocity & acceleration. Making character control, to perform steer, jump, slide. Having the camera follow the player.
+
+- Starting game loop and ending when player dies (either colliding with an obect or by falling out of the platforms). We also aded Character animations for running, jumping, sliding, falling, and collision animations.
+
+- We added UI to navigate between actual game and veiwing high scores. 
+
+#### Blender
+
+I agree, I used blender sparingly for this project atleast. I used blender to create the blocks of obstacles and platforms. But this small peek into the tool, made me a fan of it for lifelong. Since then I am interested in making 3D arts, models etc. Never made one till now, not seriously atleast, but hopefully make one in future as a hobby.
+
+#### Git
+
+This was kinda my first project where I collaborated with someone for real. I had used git earlier but never truly collaboratively. To have an easy start, we used github desktop, the decision that will haunt me forever. It was good and fine for a while. Until one day the whole project is just broken out of nowhere, and unity shouting that project is corrupted. Both of us just performed the `Sync` option in the github desktop. Hence none of us have the working versions anymore.
+
+Both being first time git users, we tried to fix the mess, only to make it even messier, until both of us gave up and made a new repository from the latest commit we could find, and redoing some of the lost updates. But this whole patching took more than a week, and that alone single handedly made both of us loose interest on the game, and finally moving on with our next projects.
+
+## Why Does It Matter
+
+Yes, the ending was not something good. But we learned our lessons. Never going to use Github Desktop ever, even though some say it makes things easier. We both learned to use git via terminal, and thats better than the GUI version can ever be.
+
+Even though we did not completely finish the game entirely, considering what we initially thought of, making it was a great experience. We did not follow any tutorial as such, even though both of us had no idea what we are upto and what we are trying to acheive. It was all putting random pieces of information we found on internet together, to build what we wanted to, by just knowing the very basics.
+
+And finally, creating a game gave a whole different perspective, of how things are built.
