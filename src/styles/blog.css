@@ -236,7 +236,7 @@ html, body {
 
   ul > li {
     @apply list-disc list-inside;
-    @apply ml-8;
+    @apply md:ml-8 ml-4;
 
     > ul > li {
       @apply list-[circle];
@@ -253,7 +253,7 @@ html, body {
 
   ol > li {
     @apply list-decimal list-inside;
-    @apply ml-8;
+    @apply md:ml-8 ml-4;
 
     > ol > li {
       @apply list-[lower-roman];
