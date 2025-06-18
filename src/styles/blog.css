@@ -150,6 +150,7 @@ html, body {
 
   figure.video-container, figure.image-container {
     @apply md:my-8 my-4;
+    @apply flex flex-col items-center;
     
     figcaption.video-caption, figcaption.image-caption {
       @apply md:py-4 py-2 px-4;
@@ -230,11 +231,12 @@ html, body {
 
   li > p {
     @apply m-auto;
+    @apply inline;
   }
 
   ul > li {
     @apply list-disc list-inside;
-    @apply ml-8;
+    @apply md:ml-8 ml-4;
 
     > ul > li {
       @apply list-[circle];
@@ -245,13 +247,13 @@ html, body {
     }
 
     > p {
-      @apply inline-block;
+      @apply inline;
     }
   }
 
   ol > li {
     @apply list-decimal list-inside;
-    @apply ml-8;
+    @apply md:ml-8 ml-4;
 
     > ol > li {
       @apply list-[lower-roman];
