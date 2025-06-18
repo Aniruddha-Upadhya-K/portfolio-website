@@ -30,8 +30,8 @@ As for any AI related projects, data is the fuel, and turns out getting that dat
 
 #### And Finally, Python... Again
 
-Just like any other AI project, Python is like the first and mostly the only language used. It's not just about the easy or told so (not for me personally)  syntax, but it’s about thinking in terms of data transformations, vectorized operations etc. The latter point makes more sense, as you wouldn't want to keep implementing your own set of string/data manupilation techniques in _C/C++_ or so languages. Libraries like _Numpy_, _Pandas_, _CV2_, _Matplotlib_, _Scikit learn_ etc. became my new toolbox. But well I guess I will never going to get fully comfortable with those.
+Just like any other AI project, Python is like the first and mostly the only language used. It's not just about the easy or told so (not to me personally)  syntax, but it’s about thinking in terms of data transformations, vectorized operations etc. The latter point makes more sense, as you wouldn't want to keep implementing your own set of string/data manipulation techniques in _C/C++_ or so languages. Libraries like _Numpy_, _Pandas_, _CV2_, _Matplotlib_, _Scikit learn_ etc. became my new toolbox. But well I guess I will never going to get fully comfortable with those.
 
 ## Why Does It Matter
 
-This wasn’t just a project about models or data - it was a crash course in applied AI, in understanding domain-specific challenges. It pushed me out of my comfort zone, taught me to think differently, and made me realize how much I still have to learn. But more importantly - it made me want to keep learning.
+This wasn’t just a project about models or data - it was like a crash course in AI, in understanding domain-specific challenges. It pushed me out of my comfort zone, taught me to think differently, and made me realize how much I still have to learn.
