@@ -1,0 +1,49 @@
+---
+title: Kvdhama Website
+desc: Informational website about Ashraya Dhama
+tags:
+    - Informational
+website: https://kvdhama.com/
+github: https://github.com/Inspirante-Tech/krishnaveni-ashrayadhama
+team: 
+    - https://github.com/Karthik-S-Salian|Karthik-S-Salian
+    - https://github.com/002sathwik|sathwik
+    - https://github.com/BhavyaNayak04|Bhavya-Nayak
+    - https://github.com/VarshithPawarHR|Varshith-Pawar
+---
+
+import Carousel from "../../components/blog/BlogMediaCarousel.astro";
+import contents from "./carouselMedia/kvdhama.ts";
+
+## Background
+
+Until this, I had made a couple of websites, mostly focused on college events, or my personal ones. This project was different. It was my first real world client project, specifically, a website for the then newly opening Ashrayadhama. I got this opportunity through the
+<a href="https://www.finiteloop.co.in/" target="_blank">Finite Loop Club</a>,
+our college’s coding club, which handles external projects as well.
+
+<Carousel 
+  uid="kvdhama" 
+  contents={contents}
+/>
+
+## Things I Learned
+
+#### Meeting Client's Expectations
+
+The initial bref was just a normal site, a clean, informative site to explain about the Ashrayadhama, no fancy animations, just solid content delivery. Sounds simple... compared to other projects I have worked on, it is simple, no comments on that.
+
+We had a solid team, with some good ideas for the implementation. Content management without touching the codebase was one of the requirements, hence we planned to go with a CMS, instead of building one ourselves, and we chose
+<a href="https://www.sanity.io/" target="_blank">Sanity</a>.
+We built a system where one can change almost any text in the website without ever changing source code, basically no hrd coding, not the texts, not even the media files like images, videos, youtube links.
+
+Everything was smooth, until we showed the draft - just layout and dummy data as we did not get any contents yet. Thus starting the feedback train. First came the small requests. Then more. And more. Real content started coming in batches... and so did new requirements. It was less "here’s what we need" and more "here’s what we thought we needed, but now we changed our mind". The frontend itself was pretty stable after a few rounds, but handling ever-shifting content structure, delayed inputs, and unclear formatting was where the real challenge lay.
+
+#### internationalization
+
+The Ashrayadhama is specifically targeted for the local public, so they wanted the website to be in local language, Kannada, as well. I never built a multilanguage till now, so this was my first one. It was fairly easy and straight forward, as Next JS has this exact feature built in. 
+
+But again, the hard part is, the client would have to update the content both the languages. Which is manual work everyone hates. So we thought of using a translation API which will auto-fill and store both versions. but then that would encur extra costs, and since this project needed to stay online long-term, we couldn't rely on free APIs that might change their pricing, add limits, or vanish altogether. So we stuck to a manual process, which meant more coordination on their end.
+
+## Why Does It Matter
+
+This was my first time working with a real client, dealing with real feedback, changing needs, and deadlines. Felt what's the point of this silly feature, and just why this over here... but at the end of the day, we will have to build whatever the clients say.
