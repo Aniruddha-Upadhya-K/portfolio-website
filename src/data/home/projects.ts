@@ -68,7 +68,7 @@ export const projects: Project[] = [
   },
   {
     name: "Eternals",
-    desc: "A 3d infinite runner game inspired by Temple Run, The game features procedurally generated platforms, randomized obstacle spawns, and collectible coins. Players can jump, slide, and move side-to-side, with a high score system tracking their best runs. Game difficulty increases with the increase in the score making it challenging.",
+    desc: "A 3d infinite runner game inspired by Temple Run but set up in an unknown planet, The game features procedurally generated platforms, randomized obstacle spawns, and collectible coins. Players can jump, slide, and move side-to-side, with a high score system tracking their best runs. Game difficulty increases with the increase in the score making it challenging.",
     date: "Aug 2023",
     url: {
       github: "https://github.com/Aniruddha-Upadhya-K/Eternals",
